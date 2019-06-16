@@ -1,5 +1,16 @@
 <div class="row">
-	<div class="col-4" *ngFor="let item of restaurantList?.results">
+	<div class="col-6">
+		<dr-pagination
+			[count]=restaurantList?.count
+			(pageChanged)="updateRestaurants($event)"
+		></dr-pagination>
+	</div>
+</div>
+<div class="row">
+	<div 
+		class="col-4"
+		*ngFor="let item of restaurantList?.results"
+	>
 		<dr-restaurant-item [restaurant]="item"></dr-restaurant-item>
 	</div>
 </div>
